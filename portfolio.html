@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio | JM Edificações — Projetos de Engenharia em Aracaju</title>
+<meta name="description" content="Conheça os projetos realizados pela JM Edificações: obras residenciais, soluções hidráulicas, impermeabilização, instalações elétricas e forros em Aracaju e região.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:      #141210;
+  --ink2:     #3a3530;
+  --muted:    #7a7068;
+  --warm:     #f7f3ee;
+  --sand:     #e8e0d4;
+  --line:     rgba(20,18,16,.1);
+  --gold:     #c19a52;
+  --gold-d:   #8f6e30;
+  --white:    #fdfcfa;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Outfit', sans-serif; background: var(--white); color: var(--ink); overflow-x: hidden; }
+a { text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+.serif { font-family: 'Cormorant Garamond', serif; }
+.label {
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  font-weight: 600; color: var(--gold);
+}
+
+/* ══════════════ NAV ══════════════ */
+.nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 64px; height: 72px;
+  background: rgba(253,252,250,.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow .3s;
+}
+.nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.07); }
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 700; color: var(--ink);
+  letter-spacing: -0.5px; line-height: 1;
+}
+.nav-logo sup { font-size: 13px; color: var(--gold); vertical-align: super; }
+.nav-menu { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-menu a {
+  font-size: 13px; font-weight: 500; letter-spacing: .8px;
+  color: var(--ink2); text-transform: uppercase;
+  position: relative; padding-bottom: 2px;
+  transition: color .2s;
+}
+.nav-menu a.active { color: var(--ink); }
+.nav-menu a.active::after { width: 100%; }
+.nav-menu a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  height: 1px; width: 0; background: var(--gold);
+  transition: width .3s;
+}
+.nav-menu a:hover { color: var(--ink); }
+.nav-menu a:hover::after { width: 100%; }
+.nav-wpp {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--ink); color: var(--white) !important;
+  padding: 10px 20px; border-radius: 2px;
+  font-size: 13px !important; font-weight: 600 !important;
+  letter-spacing: .5px !important; text-transform: none !important;
+  transition: background .25s;
+}
+.nav-wpp:hover { background: var(--gold-d) !important; }
+.nav-wpp::after { display: none !important; }
+.nav-wpp svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* ══════════════ PAGE HERO ══════════════ */
+.page-hero {
+  padding: 160px 64px 80px;
+  background: linear-gradient(180deg, var(--warm) 0%, var(--white) 100%);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; top: 40%; right: -120px;
+  width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(193,154,82,.12), transparent 70%);
+  pointer-events: none;
+}
+.page-hero-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.3fr 1fr;
+  gap: 80px; align-items: end;
+  position: relative;
+}
+.breadcrumb {
+  font-size: 12px; letter-spacing: 1px; color: var(--muted);
+  margin-bottom: 18px; text-transform: uppercase;
+}
+.breadcrumb a { color: var(--muted); }
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb span { color: var(--ink); font-weight: 500; }
+.page-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 600; line-height: 1.02;
+  color: var(--ink); letter-spacing: -1.5px;
+  animation: up .8s ease both;
+}
+.page-hero h1 em { font-style: italic; color: var(--gold); }
+.page-hero .lede {
+  font-size: 17px; line-height: 1.8; color: var(--muted);
+  max-width: 440px;
+  animation: up .8s .12s ease both;
+}
+.page-hero-stats {
+  display: flex; gap: 48px; margin-top: 24px;
+  padding-top: 32px; border-top: 1px solid var(--line);
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px; font-weight: 700; color: var(--ink);
+  line-height: 1;
+}
+.stat-num span { color: var(--gold); }
+.stat-label {
+  font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--muted); margin-top: 6px;
+}
+
+/* ══════════════ FILTERS ══════════════ */
+.filters-bar {
+  position: sticky; top: 72px; z-index: 50;
+  background: rgba(253,252,250,.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 64px;
+}
+.filters-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.filters {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.filter-btn {
+  background: transparent; border: 1px solid var(--sand);
+  color: var(--ink2);
+  padding: 9px 20px; border-radius: 999px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 500; letter-spacing: .3px;
+  cursor: pointer;
+  transition: all .25s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.filter-btn:hover { border-color: var(--gold); color: var(--gold-d); }
+.filter-btn.active {
+  background: var(--ink); border-color: var(--ink); color: var(--white);
+}
+.filter-btn .count {
+  display: inline-block;
+  font-size: 11px; font-weight: 600;
+  padding: 1px 7px; border-radius: 999px;
+  background: rgba(20,18,16,.06); color: var(--muted);
+}
+.filter-btn.active .count { background: rgba(255,255,255,.15); color: rgba(255,255,255,.85); }
+.filter-btn:hover .count { background: rgba(193,154,82,.15); color: var(--gold-d); }
+
+.filters-count {
+  font-size: 12px; color: var(--muted);
+  letter-spacing: .5px;
+}
+.filters-count strong { color: var(--ink); font-weight: 600; }
+
+/* ══════════════ GRID ══════════════ */
+.portfolio {
+  padding: 72px 64px 120px;
+}
+.portfolio-inner {
+  max-width: 1280px; margin: 0 auto;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.p-card {
+  position: relative; overflow: hidden;
+  border-radius: 4px;
+  background: var(--sand);
+  cursor: pointer;
+  grid-column: span 4;
+  aspect-ratio: 4/5;
+  animation: fadeScale .5s ease both;
+}
+.p-card.span-6 { grid-column: span 6; aspect-ratio: 4/3; }
+.p-card.span-8 { grid-column: span 8; aspect-ratio: 16/10; }
+.p-card.hide { display: none; }
+
+.p-card img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.25,.46,.45,.94), filter .5s;
+  filter: brightness(.88) saturate(.85);
+}
+.p-card:hover img { transform: scale(1.08); filter: brightness(.7) saturate(.8); }
+
+.p-card-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 0%, transparent 45%, rgba(20,18,16,.92) 100%);
+  transition: opacity .35s;
+}
+
+.p-card-body {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 32px 28px;
+  color: var(--white);
+}
+.p-card-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  font-weight: 600; color: var(--gold);
+  margin-bottom: 12px;
+}
+.p-card-tag::before {
+  content: ''; display: inline-block;
+  width: 16px; height: 1px; background: var(--gold);
+}
+.p-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 1.6vw, 26px);
+  font-weight: 600; line-height: 1.18;
+  max-width: 420px;
+}
+.p-card-meta {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 14px;
+  font-size: 12px; color: rgba(253,252,250,.7);
+  letter-spacing: .5px;
+}
+.p-card-meta span { display: inline-flex; align-items: center; gap: 6px; }
+
+.p-card-open {
+  position: absolute; top: 22px; right: 22px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(253,252,250,.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(253,252,250,.2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white); font-size: 16px;
+  opacity: 0; transform: translate(-4px, 4px);
+  transition: opacity .35s, transform .35s, background .2s;
+}
+.p-card:hover .p-card-open { opacity: 1; transform: translate(0, 0); }
+.p-card-open:hover { background: var(--gold); border-color: var(--gold); }
+
+.p-card-num {
+  position: absolute; top: 22px; left: 26px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px; font-weight: 600;
+  color: rgba(253,252,250,.28);
+  line-height: 1;
+}
+
+/* ══════════════ EMPTY ══════════════ */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center; padding: 80px 24px;
+  color: var(--muted);
+}
+.empty-state h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; color: var(--ink); margin-bottom: 12px;
+}
+
+/* ══════════════ LIGHTBOX ══════════════ */
+.lightbox {
+  position: fixed; inset: 0; z-index: 400;
+  background: rgba(10,8,6,.94);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 40px;
+  animation: fadeIn .3s ease;
+}
+.lightbox.open { display: flex; }
+.lightbox-box {
+  position: relative;
+  width: min(1100px, 100%);
+  max-height: 90vh;
+  background: var(--white);
+  border-radius: 6px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  animation: popIn .4s cubic-bezier(.25,.46,.45,.94);
+}
+.lightbox-img {
+  background: var(--ink);
+  position: relative;
+  min-height: 480px;
+}
+.lightbox-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(.98);
+}
+.lightbox-info {
+  padding: 56px 48px;
+  display: flex; flex-direction: column;
+  overflow-y: auto;
+}
+.lightbox-info .label { margin-bottom: 16px; }
+.lightbox-info h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px; font-weight: 600;
+  line-height: 1.1; color: var(--ink);
+  margin-bottom: 20px;
+}
+.lightbox-info p {
+  font-size: 15px; line-height: 1.75; color: var(--muted);
+  margin-bottom: 24px;
+}
+.lightbox-meta {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+.lightbox-meta-row {
+  display: flex; justify-content: space-between;
+  font-size: 13px;
+}
+.lightbox-meta-row .k { color: var(--muted); letter-spacing: .5px; }
+.lightbox-meta-row .v { color: var(--ink); font-weight: 500; }
+.lightbox-cta {
+  margin-top: auto;
+}
+.lightbox-cta a {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold); color: var(--white);
+  padding: 14px 28px; border-radius: 2px;
+  font-size: 14px; font-weight: 600; letter-spacing: .3px;
+  transition: background .2s;
+}
+.lightbox-cta a:hover { background: var(--gold-d); }
+
+.lightbox-close {
+  position: absolute; top: 18px; right: 18px;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(253,252,250,.92);
+  border: none;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 18px;
+  color: var(--ink);
+  transition: background .2s, transform .2s;
+  z-index: 2;
+}
+.lightbox-close:hover { background: var(--white); transform: rotate(90deg); }
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(253,252,250,.9);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: var(--ink);
+  transition: background .2s;
+  z-index: 2;
+}
+.lightbox-nav:hover { background: var(--white); }
+.lightbox-nav.prev { left: 16px; }
+.lightbox-nav.next { right: 16px; }
+
+/* ══════════════ CTA ══════════════ */
+.portfolio-cta {
+  padding: 100px 64px;
+  background: var(--ink);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-cta::before {
+  content: '';
+  position: absolute; top: -100px; left: -100px;
+  width: 340px; height: 340px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(193,154,82,.16), transparent 70%);
+}
+.portfolio-cta::after {
+  content: '';
+  position: absolute; bottom: -120px; right: -80px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(193,154,82,.12), transparent 70%);
+}
+.portfolio-cta-inner {
+  max-width: 900px; margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.portfolio-cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4.5vw, 62px);
+  font-weight: 600; line-height: 1.08;
+  letter-spacing: -.5px;
+  margin-bottom: 24px;
+}
+.portfolio-cta h2 em { font-style: italic; color: var(--gold); }
+.portfolio-cta p {
+  font-size: 17px; line-height: 1.7;
+  color: rgba(253,252,250,.65);
+  max-width: 580px; margin: 0 auto 40px;
+}
+.portfolio-cta-actions {
+  display: inline-flex; gap: 14px; flex-wrap: wrap;
+  justify-content: center;
+}
+.btn-gold {
+  background: var(--gold); color: var(--white);
+  padding: 15px 34px; border-radius: 2px;
+  font-size: 14px; font-weight: 600; letter-spacing: .3px;
+  transition: background .25s, transform .2s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-gold:hover { background: var(--gold-d); transform: translateY(-2px); }
+.btn-outline-light {
+  background: transparent; border: 1px solid rgba(253,252,250,.3);
+  color: var(--white); padding: 15px 34px; border-radius: 2px;
+  font-size: 14px; font-weight: 500;
+  transition: border-color .25s, background .25s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-outline-light:hover { border-color: var(--gold); background: rgba(193,154,82,.08); }
+
+/* ══════════════ FOOTER ══════════════ */
+footer {
+  background: var(--ink); color: rgba(253,252,250,.5);
+  padding: 80px 64px 40px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 64px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 40px;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 700; color: #fdfcfa;
+  margin-bottom: 16px;
+}
+.footer-logo sup { font-size: 13px; color: var(--gold); }
+.footer-tagline { font-size: 14px; line-height: 1.7; max-width: 240px; }
+.footer-col h4 {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); font-weight: 600; margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: rgba(253,252,250,.5); font-size: 14px; transition: color .2s; }
+.footer-col ul li a:hover { color: #fdfcfa; }
+.footer-col p { font-size: 14px; line-height: 1.8; }
+.footer-col a { color: rgba(253,252,250,.5); transition: color .2s; }
+.footer-col a:hover { color: #fdfcfa; }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; color: rgba(253,252,250,.3);
+}
+.footer-socials { display: flex; gap: 12px; }
+.social-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(253,252,250,.4); font-size: 13px; font-weight: 600;
+  transition: all .2s;
+}
+.social-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ══════════════ FLOAT WPP ══════════════ */
+.float-wpp {
+  position: fixed; bottom: 32px; right: 32px; z-index: 300;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(37,211,102,.4);
+  transition: transform .25s, box-shadow .25s;
+}
+.float-wpp:hover { transform: scale(1.1); box-shadow: 0 6px 32px rgba(37,211,102,.5); }
+.float-wpp svg { width: 28px; height: 28px; fill: #fff; }
+
+/* ══════════════ ANIMATIONS ══════════════ */
+@keyframes up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeScale {
+  from { opacity: 0; transform: scale(.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes popIn {
+  from { opacity: 0; transform: scale(.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ══════════════ MOBILE ══════════════ */
+@media (max-width: 1024px) {
+  .p-card, .p-card.span-6, .p-card.span-8 { grid-column: span 6; aspect-ratio: 4/5; }
+}
+@media (max-width: 960px) {
+  .nav { padding: 0 24px; }
+  .nav-menu { gap: 20px; }
+  .nav-menu li:not(:last-child):not(.mobile-keep) { display: none; }
+  .page-hero { padding: 120px 24px 60px; }
+  .page-hero-inner { grid-template-columns: 1fr; gap: 36px; align-items: start; }
+  .page-hero-stats { gap: 28px; }
+  .filters-bar { padding: 16px 24px; position: static; }
+  .portfolio { padding: 48px 24px 80px; }
+  .portfolio-grid { gap: 16px; }
+  .lightbox { padding: 16px; }
+  .lightbox-box { grid-template-columns: 1fr; max-height: 94vh; overflow-y: auto; }
+  .lightbox-img { min-height: 260px; height: 320px; }
+  .lightbox-info { padding: 32px 28px; }
+  .lightbox-info h2 { font-size: 26px; }
+  .portfolio-cta { padding: 72px 24px; }
+  footer { padding: 60px 24px 32px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
+@media (max-width: 560px) {
+  .p-card, .p-card.span-6, .p-card.span-8 { grid-column: span 12; }
+  .footer-top { grid-template-columns: 1fr; }
+  .page-hero-stats { flex-wrap: wrap; }
+  .filter-btn { padding: 8px 16px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">JM Edifica<sup>ções</sup></a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="portfolio.html" class="active">Portfólio</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="servicos.html">Serviços</a></li>
+    <li><a href="contato.html">Contato</a></li>
+    <li class="mobile-keep">
+      <a href="https://wa.me/5579991373093" class="nav-wpp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="breadcrumb">
+        <a href="index.html">Início</a> &nbsp;/&nbsp; <span>Portfólio</span>
+      </div>
+      <p class="label" style="margin-bottom:20px;">Projetos realizados</p>
+      <h1>Obras que contam<br>uma <em>história</em> técnica</h1>
+    </div>
+    <div>
+      <p class="lede">
+        Cada projeto aqui representa uma solução pensada, executada e entregue com precisão técnica — de reparos hidráulicos complexos a projetos residenciais completos em Aracaju e região.
+      </p>
+      <div class="page-hero-stats">
+        <div>
+          <div class="stat-num">8<span>+</span></div>
+          <div class="stat-label">Projetos entregues</div>
+        </div>
+        <div>
+          <div class="stat-num">6<span>+</span></div>
+          <div class="stat-label">Áreas de atuação</div>
+        </div>
+        <div>
+          <div class="stat-num">100<span>%</span></div>
+          <div class="stat-label">Satisfação dos clientes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<div class="filters-bar">
+  <div class="filters-inner">
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="all">Todos <span class="count">8</span></button>
+      <button class="filter-btn" data-filter="residencial">Projetos Residenciais <span class="count">3</span></button>
+      <button class="filter-btn" data-filter="hidraulica">Hidráulica <span class="count">1</span></button>
+      <button class="filter-btn" data-filter="impermeabilizacao">Impermeabilização <span class="count">1</span></button>
+      <button class="filter-btn" data-filter="eletrica">Instalações Elétricas <span class="count">2</span></button>
+      <button class="filter-btn" data-filter="forro">Forro e Cobertura <span class="count">1</span></button>
+    </div>
+    <div class="filters-count"><strong id="visibleCount">8</strong> projetos exibidos</div>
+  </div>
+</div>
+
+<!-- PORTFOLIO GRID -->
+<section class="portfolio">
+  <div class="portfolio-inner">
+    <div class="portfolio-grid" id="grid">
+      <!-- 01 - Hidráulica (destaque maior) -->
+      <article class="p-card span-8" data-cat="hidraulica" data-index="0">
+        <img src="https://static.wixstatic.com/media/b1bbd7_9b31ca22f9d649ffbc10602a7bc5c23a~mv2.png"
+             alt="Solução hidráulica em reservatório superior"
+             onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80'">
+        <div class="p-card-shade"></div>
+        <div class="p-card-num">01</div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Hidráulica · Sanitário</div>
+          <h3 class="p-card-title">Controle de Refluxo e Estanqueidade em Reservatório Superior</h3>
+          <div class="p-card-meta">
+            <span>◆ Aracaju, SE</span>
+            <span>◆ Diagnóstico + execução</span>
+          </div>
+        </div>
+        <button class="p-card-open" aria-label="Ver detalhes">↗</button>
+      </article>
+
+      <!-- 02 - Residencial -->
+      <article class="p-card" data-cat="residencial" data-index="1">
+        <img src="https://static.wixstatic.com/media/b1bbd7_e71de871477d40c5af08c51a1ed1432e~mv2.png"
+             alt="Projeto de casa residencial"
+             onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'">
+        <div class="p-card-shade"></div>
+        <div class="p-card-num">02</div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Projeto Residencial</div>
+          <h3 class="p-card-title">Projeto Casa Residencial</h3>
+          <div class="p-card-meta">
+            <span>◆ Planta · Fachada · Memorial</span>
+          </div>
+        </div>
+        <button class="p-card-open" aria-label="Ver detalhes">↗</button>
+      </article>
+
+      <!-- 03 - Forro -->
+      <article class="p-card" data-cat="forro" data-index="2">
+        <img src="https://static.wixstatic.com/media/b1bbd7_5d61790603af4a8b9d9d99eed2ec4faa~mv2.jpeg"
+             alt="Forro de PVC com barreira térmica"
+             onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80'">
+        <div class="p-card-shade"></div>
+        <div class="p-card-num">03</div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Forro e Cobertura</div>
+          <h3 class="p-card-title">Forro de PVC com Barreira Térmica em Manta Aluminizada e Poliestireno</h3>
+          <div class="p-card-meta">
+            <span>◆ Conforto térmico</span>
+          </div>
+        </div>
+        <button class="p-card-open" aria-label="Ver detalhes">↗</button>
+      </article>
+
+      <!-- 04 - Residencial (Vista Perspectivada) -->
+      <article class="p-card span-6" data-cat="residencial" data-index="3">
+        <img src="https://static.wixstatic.com/media/b1bbd7_08e8610ad7c245258eec8de30e29c40f~mv2.jpg"
+             alt="Vista perspectivada — levantamento cadastral"
+             onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80'">
+        <div class="p-card-shade"></div>
+        <div class="p-card-num">04</div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Projeto Residencial</div>
+          <h3 class="p-card-title">Vista Perspectivada — Levantamento Cadastral</h3>
+          <div class="p-card-meta">
+            <span>◆ Desenho técnico e gráfico</span>
+            <span>◆ Residência existente</span>
+          </div>
+        </div>
+        <button class="p-card-open" aria-label="Ver detalhes">↗</button>
+      </article>
+
+      <!-- 05 - Salão de Festas -->
+      <article class="p-card span-6" data-cat="residencial" data-index="4">
+        <img src="https://static.wixstatic.com/media/b1bbd7_686e9858584942058088dd841ff87891~mv2.png"
+             alt="Salão de festas"
+             onerror="this.src='https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&q=80'">
+        <div class="p-card-shade"></div>
+        <div class="p-card-num">05</div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Projeto de Ambiente</div>
+          <h3 class="p-card-title">Salão de Festas</h3>
+          <div class="p-card-meta">
+            <span>◆ Espaço para eventos</span>
+          </div>
+        </div>
+        <button class="p-card-open" aria-label="Ver detalhes">↗</button>
+      </article>
+
+      <!-- 06 - Impermeabilização -->
+      <article class="p-card" data-cat="impermeabilizacao" data-index="5">
+        <img src="https://static.wixstatic.com/media/b1bbd7_f9c1c389a6f34d0080565ffcd612453f~mv2.jpg"
+             alt="Tratamento de trincas em calhas de concreto"
+             onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80'">
+        <div class="p-card-shade"></div>
+        <div class="p-card-num">06</div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Impermeabilização</div>
+          <h3 class="p-card-title">Diagnóstico, Tratamento de Trincas e Impermeabilização de Calhas de Concreto</h3>
+          <div class="p-card-meta">
+            <span>◆ Laudo + execução</span>
+          </div>
+        </div>
+        <button class="p-card-open" aria-label="Ver detalhes">↗</button>
+      </article>
+
+      <!-- 07 - Elétrica Corredor -->
+      <article class="p-card" data-cat="eletrica" data-index="6">
+        <img src="https://static.wixstatic.com/media/b1bbd7_55d4a9b62ce4427a943ac624e1017fd1~mv2.jpg"
+             alt="Ponto de luz instalado em corredor"
+             onerror="this.src='https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&q=80'">
+        <div class="p-card-shade"></div>
+        <div class="p-card-num">07</div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Instalações Elétricas</div>
+          <h3 class="p-card-title">Ponto de Luz Instalado em Corredor</h3>
+          <div class="p-card-meta">
+            <span>◆ Acabamento profissional</span>
+          </div>
+        </div>
+        <button class="p-card-open" aria-label="Ver detalhes">↗</button>
+      </article>
+
+      <!-- 08 - Elétrica Ventilador -->
+      <article class="p-card" data-cat="eletrica" data-index="7">
+        <img src="https://static.wixstatic.com/media/b1bbd7_51147544206540cfaff3714e58cdd025~mv2.jpg"
+             alt="Instalação de ventilador de teto em sala de estar"
+             onerror="this.src='https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80'">
+        <div class="p-card-shade"></div>
+        <div class="p-card-num">08</div>
+        <div class="p-card-body">
+          <div class="p-card-tag">Instalações Elétricas</div>
+          <h3 class="p-card-title">Instalação de Ventilador de Teto em Sala de Estar</h3>
+          <div class="p-card-meta">
+            <span>◆ Segurança e acabamento</span>
+          </div>
+        </div>
+        <button class="p-card-open" aria-label="Ver detalhes">↗</button>
+      </article>
+
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <h3>Nenhum projeto nessa categoria</h3>
+        <p>Experimente outro filtro ou veja todos os projetos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="portfolio-cta">
+  <div class="portfolio-cta-inner">
+    <p class="label" style="margin-bottom:20px;">Próximo projeto</p>
+    <h2>Seu projeto pode ser<br>o <em>próximo</em> aqui</h2>
+    <p>Conte o que você precisa. A partir de uma visita técnica, elaboramos o diagnóstico, o orçamento e um plano de execução detalhado — sem compromisso.</p>
+    <div class="portfolio-cta-actions">
+      <a href="https://wa.me/5579991373093?text=Ol%C3%A1%21%20Vi%20o%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento." class="btn-gold">
+        Solicitar orçamento →
+      </a>
+      <a href="index.html#contato" class="btn-outline-light">Voltar ao site</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">JM Edifica<sup>ções</sup></div>
+      <p class="footer-tagline">Engenharia civil com planejamento técnico e compromisso. Aracaju e região.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="servicos.html">Projetos Residenciais</a></li>
+        <li><a href="servicos.html">Hidráulica</a></li>
+        <li><a href="servicos.html">Impermeabilização</a></li>
+        <li><a href="servicos.html">Instalações Elétricas</a></li>
+        <li><a href="servicos.html">Laudos Técnicos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <p>
+        <a href="tel:+5579991373093">(79) 99137-3093</a><br>
+        <a href="mailto:jmedf.contato@gmail.com">jmedf.contato@gmail.com</a><br><br>
+        Seg–Sex: 8h às 18h<br>
+        Sáb–Dom: 9h às 13h
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 JM Edificações. Todos os direitos reservados.</span>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/profile.php?id=61582820973803" class="social-btn" title="Facebook">f</a>
+      <a href="#" class="social-btn" title="Instagram">ig</a>
+      <a href="https://wa.me/5579991373093" class="social-btn" title="WhatsApp">w</a>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+  <div class="lightbox-box">
+    <div class="lightbox-img">
+      <img id="lbImg" alt="">
+    </div>
+    <button class="lightbox-nav prev" id="lbPrev" aria-label="Projeto anterior">‹</button>
+    <button class="lightbox-nav next" id="lbNext" aria-label="Próximo projeto">›</button>
+    <button class="lightbox-close" id="lbClose" aria-label="Fechar">✕</button>
+    <div class="lightbox-info">
+      <span class="label" id="lbTag">Categoria</span>
+      <h2 id="lbTitle">Título</h2>
+      <p id="lbDesc">Descrição</p>
+      <div class="lightbox-meta">
+        <div class="lightbox-meta-row"><span class="k">Categoria</span><span class="v" id="lbMetaCat"></span></div>
+        <div class="lightbox-meta-row"><span class="k">Local</span><span class="v">Aracaju / SE</span></div>
+        <div class="lightbox-meta-row"><span class="k">Escopo</span><span class="v" id="lbMetaScope"></span></div>
+      </div>
+      <div class="lightbox-cta">
+        <a href="#" id="lbWpp" target="_blank" rel="noopener">Quero algo parecido →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5579991373093" class="float-wpp" title="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+/* Nav scroll */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* Project data for the lightbox */
+const projects = [
+  {
+    img: "https://static.wixstatic.com/media/b1bbd7_9b31ca22f9d649ffbc10602a7bc5c23a~mv2.png",
+    fallback: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1400&q=85",
+    cat: "hidraulica",
+    catLabel: "Hidráulica · Sanitário",
+    title: "Controle de Refluxo e Estanqueidade em Reservatório Superior",
+    desc: "Diagnóstico técnico de sistema hidráulico com problemas de refluxo e perda de estanqueidade em reservatório superior, seguido da execução completa da correção — garantindo segurança sanitária e desempenho do abastecimento.",
+    scope: "Diagnóstico · Correção · Vedação"
+  },
+  {
+    img: "https://static.wixstatic.com/media/b1bbd7_e71de871477d40c5af08c51a1ed1432e~mv2.png",
+    fallback: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=85",
+    cat: "residencial",
+    catLabel: "Projeto Residencial",
+    title: "Projeto Casa Residencial",
+    desc: "Desenvolvimento de projeto residencial completo com planta baixa, fachada e memorial descritivo, elaborado conforme normas da ABNT para apoiar a execução e a regularização da obra.",
+    scope: "Planta · Fachada · Memorial"
+  },
+  {
+    img: "https://static.wixstatic.com/media/b1bbd7_5d61790603af4a8b9d9d99eed2ec4faa~mv2.jpeg",
+    fallback: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=85",
+    cat: "forro",
+    catLabel: "Forro e Cobertura",
+    title: "Forro de PVC com Barreira Térmica em Manta Aluminizada e Poliestireno",
+    desc: "Instalação de forro de PVC associado à barreira térmica composta por manta aluminizada e placas de poliestireno — solução eficiente para redução de calor em cobertura e maior conforto térmico interno.",
+    scope: "Instalação · Isolamento térmico"
+  },
+  {
+    img: "https://static.wixstatic.com/media/b1bbd7_08e8610ad7c245258eec8de30e29c40f~mv2.jpg",
+    fallback: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=85",
+    cat: "residencial",
+    catLabel: "Projeto Residencial",
+    title: "Vista Perspectivada — Levantamento Cadastral",
+    desc: "Levantamento cadastral de residência existente com elaboração de desenho técnico e gráfico, incluindo vista perspectivada para facilitar leitura do projeto e tomada de decisão em reformas.",
+    scope: "Levantamento · Desenho técnico"
+  },
+  {
+    img: "https://static.wixstatic.com/media/b1bbd7_686e9858584942058088dd841ff87891~mv2.png",
+    fallback: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=85",
+    cat: "residencial",
+    catLabel: "Projeto de Ambiente",
+    title: "Salão de Festas",
+    desc: "Projeto de ambiente voltado para salão de festas, com foco em aproveitamento do espaço, funcionalidade e identidade visual adequada à proposta do local.",
+    scope: "Projeto · Ambientação"
+  },
+  {
+    img: "https://static.wixstatic.com/media/b1bbd7_f9c1c389a6f34d0080565ffcd612453f~mv2.jpg",
+    fallback: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=85",
+    cat: "impermeabilizacao",
+    catLabel: "Impermeabilização",
+    title: "Diagnóstico, Tratamento de Trincas e Impermeabilização de Calhas de Concreto",
+    desc: "Serviço integrado de inspeção das calhas de concreto, tratamento das trincas identificadas e aplicação de sistema impermeabilizante, eliminando infiltrações e prolongando a vida útil da estrutura.",
+    scope: "Laudo · Tratamento · Impermeabilização"
+  },
+  {
+    img: "https://static.wixstatic.com/media/b1bbd7_55d4a9b62ce4427a943ac624e1017fd1~mv2.jpg",
+    fallback: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1400&q=85",
+    cat: "eletrica",
+    catLabel: "Instalações Elétricas",
+    title: "Ponto de Luz Instalado em Corredor",
+    desc: "Instalação de ponto de luz em corredor com atenção ao posicionamento, segurança elétrica e acabamento final — solução simples com grande impacto na iluminação do ambiente.",
+    scope: "Elétrica · Iluminação"
+  },
+  {
+    img: "https://static.wixstatic.com/media/b1bbd7_51147544206540cfaff3714e58cdd025~mv2.jpg",
+    fallback: "https://images.unsplash.com/photo-1558002038-1055907df827?w=1400&q=85",
+    cat: "eletrica",
+    catLabel: "Instalações Elétricas",
+    title: "Instalação de Ventilador de Teto em Sala de Estar",
+    desc: "Instalação de ventilador de teto em sala de estar com preparação do ponto elétrico, fixação adequada e testes finais de funcionamento — priorizando segurança e acabamento profissional.",
+    scope: "Elétrica · Fixação · Teste"
+  }
+];
+
+/* Filters */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.p-card');
+const visibleCountEl = document.getElementById('visibleCount');
+const emptyState = document.getElementById('emptyState');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    let shown = 0;
+    cards.forEach(card => {
+      const match = f === 'all' || card.dataset.cat === f;
+      card.classList.toggle('hide', !match);
+      if (match) { shown++; card.style.animation = 'fadeScale .5s ease both'; }
+    });
+    visibleCountEl.textContent = shown;
+    emptyState.style.display = shown === 0 ? 'block' : 'none';
+  });
+});
+
+/* Lightbox */
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbTag = document.getElementById('lbTag');
+const lbTitle = document.getElementById('lbTitle');
+const lbDesc = document.getElementById('lbDesc');
+const lbMetaCat = document.getElementById('lbMetaCat');
+const lbMetaScope = document.getElementById('lbMetaScope');
+const lbWpp = document.getElementById('lbWpp');
+const lbClose = document.getElementById('lbClose');
+const lbPrev = document.getElementById('lbPrev');
+const lbNext = document.getElementById('lbNext');
+
+let currentIdx = 0;
+
+function openLightbox(idx) {
+  const p = projects[idx];
+  if (!p) return;
+  currentIdx = idx;
+  lbImg.src = p.img;
+  lbImg.onerror = () => { lbImg.onerror = null; lbImg.src = p.fallback; };
+  lbImg.alt = p.title;
+  lbTag.textContent = p.catLabel;
+  lbTitle.textContent = p.title;
+  lbDesc.textContent = p.desc;
+  lbMetaCat.textContent = p.catLabel;
+  lbMetaScope.textContent = p.scope;
+  lbWpp.href = 'https://wa.me/5579991373093?text=' + encodeURIComponent('Olá! Tenho interesse em algo parecido com o projeto: ' + p.title);
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function navigate(dir) {
+  openLightbox((currentIdx + dir + projects.length) % projects.length);
+}
+
+cards.forEach(card => {
+  card.addEventListener('click', () => openLightbox(parseInt(card.dataset.index, 10)));
+});
+lbClose.addEventListener('click', closeLightbox);
+lbPrev.addEventListener('click', (e) => { e.stopPropagation(); navigate(-1); });
+lbNext.addEventListener('click', (e) => { e.stopPropagation(); navigate(1); });
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navigate(-1);
+  if (e.key === 'ArrowRight') navigate(1);
+});
+</script>
+</body>
+</html>
